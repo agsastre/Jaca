@@ -1,0 +1,37 @@
+---
+title: "informe_iris"
+author: "Alvaro GS"
+format: typst
+message: FALSE
+warning: FALSE
+---
+
+# Informe de iris ejemplo
+
+Cargamos los paquetes 
+```{r}
+#| echo: FALSE
+#| label: "Paquetes"
+library(tidyverse)
+library(here)
+library(stringr)
+```
+
+Y ahora los datos
+```{r}
+data <- read.csv(here("data/data_clean.csv"))
+```
+
+Meter un codigo en el texto `r getwd()`
+
+# Hacer una figura
+
+```{r}
+
+ggplot(data, aes(year, seed_mass_mg)) +
+  geom_point() +
+  theme_classic()
+
+```
+
+
